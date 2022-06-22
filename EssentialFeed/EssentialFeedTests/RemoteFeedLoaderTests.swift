@@ -8,9 +8,14 @@
 import XCTest
 
 class RemoteFeedLoader {
+    let client: HTTPClient
+    
+    init(client: HTTPClient) {
+        self.client = client
+    }
     func load() {
 //        HTTPClient.shares.requestedURL = URL(string: "https://a-url.com")
-        HTTPClient.shares.get(from: URL(string: "https://a-url.com")!)
+        client.get(from: URL(string: "https://a-url.com")!)
     }
 }
 
@@ -21,15 +26,12 @@ class RemoteFeedLoader {
 /// Step 5: Remove HTTPClient private initializer since it's not a singleton anymore
 /// Done! We don't have a Singleton anymore and the test logic is now in a test type(the spy)
 
-class HTTPClient {
-    static var shares = HTTPClient() // not singlton anymore
-//    static let shares = HTTPClient()
-    
-    func get(from url: URL) {}
+protocol HTTPClient {
+    func get(from url: URL)
 }
 
 class HTTPClientSpy: HTTPClient {
-    override func get(from url: URL) {
+    func get(from url: URL) {
         requestedURL = url
     }
     var requestedURL: URL?
@@ -39,8 +41,7 @@ class RemoteFeedLoaderTests: XCTestCase {
     
     func test_init_doesNotRequestDataFromURL() {
         let client = HTTPClientSpy()
-        HTTPClient.shares = client
-        _ = RemoteFeedLoader()
+        _ = RemoteFeedLoader(client: client)
         
         XCTAssertNil(client.requestedURL)
     }
@@ -48,8 +49,7 @@ class RemoteFeedLoaderTests: XCTestCase {
     func test_load_requestDataFromURL () {
         /// 1 Arrange: "Given a client and a sut"
         let client = HTTPClientSpy()
-        HTTPClient.shares = client
-        let sut = RemoteFeedLoader()
+        let sut = RemoteFeedLoader(client: client)
         
         /// 2 Act: "when we invoke sut.load()"
         sut.load()
