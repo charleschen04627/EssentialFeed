@@ -6,19 +6,7 @@
 //
 
 import XCTest
-
-class RemoteFeedLoader {
-    let client: HTTPClient
-    let url: URL
-    
-    init(url: URL, client: HTTPClient) {
-        self.url = url
-        self.client = client
-    }
-    func load() {
-        client.get(from: url)
-    }
-}
+import EssentialFeed
 
 /// Step 1: Make the shared instance a variable
 /// Step 2: Move the test logic from the RemoteFeedLoader to HTTPClient
@@ -26,10 +14,6 @@ class RemoteFeedLoader {
 /// Step 4: Swap the HTTPClient shared instance with the spy subclass during tests
 /// Step 5: Remove HTTPClient private initializer since it's not a singleton anymore
 /// Done! We don't have a Singleton anymore and the test logic is now in a test type(the spy)
-
-protocol HTTPClient {
-    func get(from url: URL)
-}
 
 class RemoteFeedLoaderTests: XCTestCase {
     
