@@ -15,7 +15,7 @@ import EssentialFeed
 /// Step 5: Remove HTTPClient private initializer since it's not a singleton anymore
 /// Done! We don't have a Singleton anymore and the test logic is now in a test type(the spy)
 
-class RemoteFeedLoaderTests: XCTestCase {
+class LoadFeedFromRemoteUseCaseTests: XCTestCase {
     
     func test_init_doesNotRequestDataFromURL() {
         let (_, client) = makeSUT()
