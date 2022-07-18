@@ -87,7 +87,7 @@ Then the app should display an error message
 1. System delivers no feed items.
 
 
-### Cache Feed Items Use Case
+### Cache Feed Use Case
 
 #### Data:
 - Feed items
