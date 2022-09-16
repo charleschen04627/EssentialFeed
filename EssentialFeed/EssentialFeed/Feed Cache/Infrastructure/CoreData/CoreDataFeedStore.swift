@@ -16,7 +16,7 @@ public class CoreDataFeedStore: FeedStore {
         context = container.newBackgroundContext()
     }
     
-    public func deleteCacheFeed(completion: @escaping DeletionCompletion) {
+    public func deleteCachedFeed(completion: @escaping DeletionCompletion) {
         perform { context in
             do {
                 try ManagedCache.find(in: context).map(context.delete).map(context.save)
@@ -46,7 +46,7 @@ public class CoreDataFeedStore: FeedStore {
         perform { context in
             do{
                 if let cache = try ManagedCache.find(in: context) {
-                    completion(.success(CacheFeed(feed: cache.localFeed, timestamp: cache.timestamp)))
+                    completion(.success(CachedFeed(feed: cache.localFeed, timestamp: cache.timestamp)))
                 } else {
                     completion(.success(.none))
                 }

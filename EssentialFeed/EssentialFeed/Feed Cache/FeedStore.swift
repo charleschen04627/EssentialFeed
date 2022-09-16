@@ -7,18 +7,18 @@
 
 import Foundation
 
-public typealias CacheFeed = (feed: [LocalFeedImage], timestamp: Date)
+public typealias CachedFeed = (feed: [LocalFeedImage], timestamp: Date)
 
 public protocol FeedStore {
     typealias DeletionCompletion = (Error?) -> Void
     typealias InsertionCompletion = (Error?) -> Void
     
-    typealias RetrievalResult = Result<CacheFeed?, Error>
+    typealias RetrievalResult = Result<CachedFeed?, Error>
     typealias RetrievalCompletion = (RetrievalResult) -> Void
     
     /// The completion handler can be invoked in any thread.
     /// Clients are responsible to dispatch to appropriate threads, if needs.
-    func deleteCacheFeed(completion: @escaping DeletionCompletion)
+    func deleteCachedFeed(completion: @escaping DeletionCompletion)
     
     /// The completion handler can be invoked in any thread.
     /// Clients are responsible to dispatch to appropriate threads, if needs.
