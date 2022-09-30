@@ -21,6 +21,7 @@
 		2339F80128E67B4100662BEB /* UIButton+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2339F80028E67B4100662BEB /* UIButton+TestHelpers.swift */; };
 		2339F80328E67C4000662BEB /* UIControl+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2339F80228E67C4000662BEB /* UIControl+TestHelpers.swift */; };
 		2339F80928E67EE100662BEB /* FeedViewController+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2339F80828E67EE100662BEB /* FeedViewController+TestHelpers.swift */; };
+		2339F80B28E6805100662BEB /* FeedImageCell+TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2339F80A28E6805100662BEB /* FeedImageCell+TestHelpers.swift */; };
 		233D394C28E5C2B900D63639 /* UIView+Shimmering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233D394B28E5C2B900D63639 /* UIView+Shimmering.swift */; };
 		234CBCF828B0B25D00F378D1 /* FeedCachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 234CBCF728B0B25D00F378D1 /* FeedCachePolicy.swift */; };
 		236C615428C9EC41003AA16B /* CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236C615328C9EC41003AA16B /* CoreDataHelpers.swift */; };
@@ -132,6 +133,7 @@
 		2339F80028E67B4100662BEB /* UIButton+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+TestHelpers.swift"; sourceTree = "<group>"; };
 		2339F80228E67C4000662BEB /* UIControl+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIControl+TestHelpers.swift"; sourceTree = "<group>"; };
 		2339F80828E67EE100662BEB /* FeedViewController+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedViewController+TestHelpers.swift"; sourceTree = "<group>"; };
+		2339F80A28E6805100662BEB /* FeedImageCell+TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedImageCell+TestHelpers.swift"; sourceTree = "<group>"; };
 		233D394B28E5C2B900D63639 /* UIView+Shimmering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Shimmering.swift"; sourceTree = "<group>"; };
 		234CBCF728B0B25D00F378D1 /* FeedCachePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCachePolicy.swift; sourceTree = "<group>"; };
 		236C615328C9EC41003AA16B /* CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
@@ -284,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				2339F80828E67EE100662BEB /* FeedViewController+TestHelpers.swift */,
+				2339F80A28E6805100662BEB /* FeedImageCell+TestHelpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -781,6 +784,7 @@
 				2339F80928E67EE100662BEB /* FeedViewController+TestHelpers.swift in Sources */,
 				2339F7FD28E679F000662BEB /* UIImage+TestHelpers.swift in Sources */,
 				2339F80128E67B4100662BEB /* UIButton+TestHelpers.swift in Sources */,
+				2339F80B28E6805100662BEB /* FeedImageCell+TestHelpers.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
