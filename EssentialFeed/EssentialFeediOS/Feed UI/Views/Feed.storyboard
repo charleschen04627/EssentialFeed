@@ -79,6 +79,9 @@ Location</string>
                                                                 <fontDescription key="titleFontDescription" type="system" pointSize="60"/>
                                                                 <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </buttonConfiguration>
+                                                            <connections>
+                                                                <action selector="retryButtonTap" destination="qwV-Oy-1aV" eventType="touchUpInside" id="jqv-oJ-G9Y"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.89019607840000003" green="0.89019607840000003" blue="0.89019607840000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -120,6 +123,14 @@ Location</string>
                                         <constraint firstItem="wYM-DT-cap" firstAttribute="trailing" secondItem="jHC-Sy-2pO" secondAttribute="trailingMargin" id="dBv-si-Kgt"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="iav-kn-Ksg" id="sXM-Tv-wpw"/>
+                                    <outlet property="feedImageContainer" destination="ekA-8r-auD" id="OM5-pb-OHy"/>
+                                    <outlet property="feedImageRetryButton" destination="HZn-BG-FIb" id="CDm-JL-suN"/>
+                                    <outlet property="feedImageView" destination="Kgw-mS-0yN" id="K0J-zC-BI7"/>
+                                    <outlet property="locationContainer" destination="qEI-92-ntx" id="BWq-fD-sWO"/>
+                                    <outlet property="locationLabel" destination="dQl-Oe-VwA" id="QGT-H5-7QA"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
