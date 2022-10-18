@@ -21,7 +21,7 @@ class FeedPresenterTests: XCTestCase {
         
         _ = FeedPresenter(view: view)
         
-        XCTAssertTrue(view.messages.isEmpty)
+        XCTAssertTrue(view.messages.isEmpty, "Expected no view messages")
     }
     
     // MARK: - Helpers
