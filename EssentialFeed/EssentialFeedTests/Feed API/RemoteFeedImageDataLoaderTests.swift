@@ -178,6 +178,7 @@ class RemoteFeedImageDataLoaderTests: XCTestCase {
         }
 
         private var messages = [(url: URL, completion: (HTTPClient.Result) -> Void)]()
+        private(set) var cancelledURLs = [URL]()
         
         var requestedURLs: [URL] {
             return messages.map { $0.url }
