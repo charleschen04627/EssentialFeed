@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2317D2042904F0FD00220A3B /* FeedLoaderCacheDecoratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2317D2032904F0FD00220A3B /* FeedLoaderCacheDecoratorTests.swift */; };
 		239B37AA2903C00300FD60C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239B37A92903C00300FD60C9 /* AppDelegate.swift */; };
 		239B37AC2903C00300FD60C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239B37AB2903C00300FD60C9 /* SceneDelegate.swift */; };
 		239B37AE2903C00300FD60C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 239B37AD2903C00300FD60C9 /* ViewController.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2317D2032904F0FD00220A3B /* FeedLoaderCacheDecoratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedLoaderCacheDecoratorTests.swift; sourceTree = "<group>"; };
 		239B37A62903C00300FD60C9 /* EssentialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EssentialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		239B37A92903C00300FD60C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		239B37AB2903C00300FD60C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 			children = (
 				239B37E92903F22500FD60C9 /* Helpers */,
 				239B37E12903DC2900FD60C9 /* FeedLoaderWithFallbackCompositeTests.swift */,
+				2317D2032904F0FD00220A3B /* FeedLoaderCacheDecoratorTests.swift */,
 				239B37E52903E16700FD60C9 /* FeedImageDataLoaderWithFallbackCompositeTests.swift */,
 			);
 			path = EssentialAppTests;
@@ -269,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				239B37ED2903F2EC00FD60C9 /* SharedTestHelpers.swift in Sources */,
+				2317D2042904F0FD00220A3B /* FeedLoaderCacheDecoratorTests.swift in Sources */,
 				239B37E62903E16700FD60C9 /* FeedImageDataLoaderWithFallbackCompositeTests.swift in Sources */,
 				239B37E22903DC2900FD60C9 /* FeedLoaderWithFallbackCompositeTests.swift in Sources */,
 				239B37EB2903F26100FD60C9 /* XCTestCase+MemoryLeakTracking.swift in Sources */,
