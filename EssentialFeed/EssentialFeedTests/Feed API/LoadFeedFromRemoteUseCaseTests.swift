@@ -15,7 +15,7 @@ import EssentialFeed
 /// Step 5: Remove HTTPClient private initializer since it's not a singleton anymore
 /// Done! We don't have a Singleton anymore and the test logic is now in a test type(the spy)
 
-class RemoteFeedLoaderTests: XCTestCase {
+class LoadFeedFromRemoteUseCaseTests: XCTestCase {
     
     func test_init_doesNotRequestDataFromURL() {
         let (_, client) = makeSUT()
@@ -146,23 +146,19 @@ class RemoteFeedLoaderTests: XCTestCase {
         return (sut, client)
     }
     
-    private func failure(_ error: RemoteFeedLoader.Error) -> LoadFeedResult {
+    private func failure(_ error: RemoteFeedLoader.Error) -> FeedLoader.Result {
         return .failure(error)
     }
     
-    private func makeItem(id: UUID, description: String? = nil, location: String? = nil, imageURL: URL) -> (model: FeedItem, json: [String: Any]){
-         let item = FeedItem(id: id, description: description, location: location, imageURL: imageURL)
+    private func makeItem(id: UUID, description: String? = nil, location: String? = nil, imageURL: URL) -> (model: FeedImage, json: [String: Any]){
+         let item = FeedImage(id: id, description: description, location: location, url: imageURL)
         
         let json = [
             "id": id.uuidString,
             "description": description,
             "location": location,
             "image": imageURL.absoluteString
-        ].reduce(into: [String: Any]()) { (acc, e) in
-            if let value = e.value {
-                acc[e.key] = value
-            }
-        }
+        ].compactMapValues { $0 }
         
         return (item, json)
     }
@@ -194,29 +190,5 @@ class RemoteFeedLoaderTests: XCTestCase {
         action()
         
         wait(for: [exp], timeout: 1.0)
-    }
-        
-    private class HTTPClientSpy: HTTPClient {
-        private var messages = [(url: URL, completion: (HTTPClientResult) -> Void)]()
-        
-        var requestedURLs: [URL] {
-            return messages.map {$0.url}
-        }
-        
-        func get(from url: URL, completion: @escaping (HTTPClientResult) -> Void) {
-            messages.append((url, completion))
-        }
-        
-        func complete(with error: Error, at index: Int = 0) {
-            messages[index].completion(.failure(error))
-        }
-        
-        func complete(withStatusCode code: Int, data: Data, at index: Int = 0) {
-            let response = HTTPURLResponse(url: requestedURLs[index],
-                                           statusCode: code,
-                                           httpVersion: nil,
-                                           headerFields: nil)!
-            messages[index].completion(.success(data, response))
-        }
     }
 }
